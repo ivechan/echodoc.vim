@@ -56,6 +56,9 @@ function! s:default.search(cur_text, filetype) abort
       let item.i = i
     endif
 
+    if a:filetype == 'python' && item.text == 'self'
+        continue
+    endif
     call add(ret, item)
 
     if i != l - 1
